@@ -431,12 +431,13 @@ img {
 
 .footer-container {
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
 }
 
-.footer-left-side {
+/* .footer-contact-side {
     margin-right: 70px;
-}
+} */
 
 .logo-footer {
     display: block;
@@ -488,6 +489,10 @@ img {
 
 /* Соціальні мережі */
 
+/* .footer-social-side {
+    margin-right: 93px;
+} */
+
 .footer-social-title {
     margin-bottom: 20px;
     font-size: 14px;
@@ -523,6 +528,80 @@ img {
     background-color: var(--accent-color);
 }
 
+ /* Форма з розсилкою */
+
+
+.footer-form-text {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-color-theme-dark);
+}
+
+.footer-form-input-box {
+    margin-top: 20px;
+    display: flex;
+}
+
+.footer-form-input {
+    margin-right: 12px;
+    display: block;
+    width: 358px;
+    height: 50px;
+    padding-left: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--text-color-theme-dark);
+}
+
+.footer-form-input::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-form-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.footer-form-submit-btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    min-width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 1px var(--accent-color);
+    border-radius: 4px;
+    
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--text-color-theme-dark);
+    cursor: pointer;
+    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+    
+.footer-form-submit-btn:hover,
+.footer-form-submit-btn:focus {
+    background-color: #188CE8;
+}
+
+.footer-form-icon {
+    margin-left: 12px;
+}
 
 
 
@@ -721,7 +800,6 @@ img {
 .close-btn:hover,
 .close-btn:focus {
     fill: var(--accent-color);
-    border: 1px solid var(--accent-color);
 }
 
 /* Форма для відсилання контактів */
@@ -750,18 +828,36 @@ img {
 }
 
 .contact-form-input {
-    position: relative;
     width: 100%;
     height: 40px;
-    margin-bottom: 10px;
+    padding-left: 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-form-icon-name {
+.contact-form-input-box {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.contact-form-icon {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+
+.contact-form-input:focus + .contact-form-icon {
+    fill: var(--accent-color);
+    
 }
 
 .contact-form-comments {
@@ -772,6 +868,7 @@ img {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form-comments::placeholder {
@@ -781,7 +878,13 @@ img {
     color: rgba(117, 117, 117, 0.5);
 }
 
+.contact-form-comments:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
 .contact-form-checkbox-label {
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -805,4 +908,31 @@ img {
     background-image: url(../image/icon-check.svg);
     background-color: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+.form-submit-btn {
+    margin: 0 auto;
+    min-width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 1px var(--accent-color);
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--text-color-theme-dark);
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-submit-btn:hover,
+.form-submit-btn:focus {
+    background-color: #188CE8;
 }
